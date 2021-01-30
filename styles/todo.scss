@@ -1,0 +1,54 @@
+@import './variables';
+@import './functions';
+body {
+    margin: auto;
+    margin-top: 50px;
+    padding: 0;
+    box-sizing: border-box;
+    width: 500px;
+    height: 100vh;
+    text-align: center;
+    background-color: $softPink;
+    h1 {
+        color: $titleRed;
+    }
+    .input_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        .input {
+            padding: 10px 20px;
+            width: 400px;
+            margin: 10px 10px 10px 50px;
+            @include inputSettings(white);
+        }
+        .addButton {
+            @include buttonSettings (white);
+            @include inputSettings ($mediumPink);
+            width: 65px;
+            margin: 20px;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    .container {
+        @include flexCenter(column);
+        margin-top: 30px;
+        .item {
+            padding: 8px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid white; 
+            .item_input {
+                @include buttonSettings(black);
+            }
+            .editButton {
+                @include editRemoveButton ($mediumPinkVariation);
+            }
+            .removeButton {
+                @include editRemoveButton ($purple);
+           }
+        }
+    }
+}
